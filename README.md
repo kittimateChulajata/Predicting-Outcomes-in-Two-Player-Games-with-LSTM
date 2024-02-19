@@ -11,3 +11,4 @@ torch.manual_seed(seed=seed)
 # Set compute device to GPU if available or CPU otherwise
 device = ("cuda" if torch.cuda.is_available() else "cpu")
 ```
+Authur Kittimate Chulajata, Sean Wu
