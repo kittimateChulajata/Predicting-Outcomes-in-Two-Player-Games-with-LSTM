@@ -53,7 +53,7 @@ for key in dfs.keys():
 data = pd.concat(objs=dfs.values(), ignore_index=True)
 
 
-cols_to_keep = ["Winner", "Player1_Damage%", "Player2_Damage%","Player_1_Max","Player_2_Max",	"Match_Progress","Round_Progression", "Sheet"]
+cols_to_keep = ["Winner", "Player1_Damaged%", "Player2_Damaged%","Player_1_Max","Player_2_Max",	"Match_Progress","Round_Progression", "Sheet"]
 
 data = data[cols_to_keep]
 def standardization(df, column_name):
@@ -516,11 +516,11 @@ for i in [2,3,4,5,6]:
   # Compute means and stds on the TRAIN SET
   idx_for_std = np.concatenate(idx_for_std[:train_end]) # We need to concat the indices because they were stored in separate lists per round
 
-  mean_1 = data["Player1_Damage%"].iloc[idx_for_std].mean()
-  mean_2 = data["Player2_Damage%"].iloc[idx_for_std].mean()
+  mean_1 = data["Player1_Damaged%"].iloc[idx_for_std].mean()
+  mean_2 = data["Player2_Damaged%"].iloc[idx_for_std].mean()
 
-  std_1 = data["Player1_Damage%"].iloc[idx_for_std].std()
-  std_2 = data["Player2_Damage%"].iloc[idx_for_std].std()
+  std_1 = data["Player1_Damaged%"].iloc[idx_for_std].std()
+  std_2 = data["Player2_Damaged%"].iloc[idx_for_std].std()
 
   print(f"{len(train_data_points)} samples in training set")
   print(f"{len(test_data_points)} samples in test set")
